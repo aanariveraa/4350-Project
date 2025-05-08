@@ -16,18 +16,43 @@
         android:orientation="vertical"
         android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    <LinearLayout
+        android:id="@+id/top_row_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <!-- EditText on top -->
-        <EditText
-            android:id="@+id/idEdtItemName"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_margin="4dp"
-            android:hint="@string/enter_item_name_to_add_or_remove_in_list" />
 
         <!-- Button container below the EditText -->
+
+        <EditText
+            android:id="@+id/idEdtItemName"
+            android:layout_width="300dp"
+            android:layout_height="64dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:hint="@string/enter_item_name_to_add_or_remove_in_list" />
+
+
+        <!--- Slot Machine -->
+        <Button
+            android:id="@+id/btn_spin"
+            android:layout_width="wrap_content"
+            android:layout_height="74dp"
+            android:layout_margin="4dp"
+            android:background="#B30E0E"
+            android:scaleType="fitCenter"
+            app:rippleColor="#F11B1B" />
+
+    </LinearLayout>
+
+
         <LinearLayout
             android:id="@+id/bottom_nav_container"
             android:layout_width="match_parent"
@@ -40,50 +65,51 @@
                 android:id="@+id/btn_delete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="4dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_minus"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
                 android:contentDescription="@string/delete"
-                android:background="@drawable/button_background" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_minus" />
 
             <!-- Edit button -->
             <ImageButton
                 android:id="@+id/btn_edit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="4dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_pencil"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
                 android:contentDescription="@string/edit"
-                android:background="@drawable/button_background" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_pencil" />
 
             <!-- Randomize button -->
             <ImageButton
                 android:id="@+id/btn_randomize"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="4dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_randomize"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
                 android:contentDescription="@string/randomize"
-                android:background="@drawable/button_background" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_randomize" />
 
             <!-- Add button -->
             <ImageButton
                 android:id="@+id/btn_add"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="4dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_plus"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
                 android:contentDescription="@string/add"
-                android:background="@drawable/button_background" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_plus" />
 
         </LinearLayout>
+
     </LinearLayout>
 
     <!-- List that displays below the top_nav_container -->

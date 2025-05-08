@@ -1,6 +1,6 @@
 package com.example.listrandom;
 
-import com.example.listrandom.SlotMachine;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Rect;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listvew;
     private int itemIndex = -1;
     private SlotMachine slotMachine;
-    private ImageButton spin_btn;
+    private Button spin_btn;
 
 
     private boolean isRand = false;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private final String ITEM_SEPERATOR = "::";
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         edit_btn = findViewById(R.id.btn_edit);
         random_btn = findViewById(R.id.btn_randomize);
         itemEdt = findViewById(R.id.idEdtItemName);
+        spin_btn = findViewById(R.id.btn_spin);
 
         // Setup insets if needed (this should not conflict with adjustResize if well tweaked)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -160,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // initialize the new spin button
-        spin_btn = findViewById(R.id.btn_spin); 
         slotMachine = new SlotMachine(this, listvew, lngList, () -> {
             spin_btn.setEnabled(true); // re-enable after spin ends
         });
