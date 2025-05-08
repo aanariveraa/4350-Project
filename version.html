@@ -1,45 +1,301 @@
 <!DOCTYPE html lang = "en">
 <head>
-	<style>
-		body {transition: opacity ease-in 0.2s; }
-		body[unresolved] {opacity: 0; display: block; overflow: hidden;
-			position: relative; }
-	</style>
-	<title> Software Engineering App </title>
-    <link rel="stylesheet" href="./cssReset.css">
-     <div class="container-fluid">
-<!-- Background animtion-->
-    <div class="background">
-       <div class="cube"></div>
-       <div class="cube"></div>
-       <div class="cube"></div>
-       <div class="cube"></div>
-      <div class="cube"></div>
-    </div>
-<!-- header -->
-   <header>
-<!-- navbar -->
-     <nav>
-        <ul>
-           <li><a href="demo.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="version.html">Versions</a></li>
-            <li><a href="contributors.html">Contributors</a></li>
-         </ul>
-       </nav>
-<!-- logo -->
-      <div class="logo"><span>4350</span></div>
-	</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+.image-block {
+    margin-top:20px;
+    max-width: 90%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+}
+
+    .image-block img {
+        width: 45%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .image-block p {
+        width: 100%;
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    .image-block2 {
+        max-width: 90%;
+        margin: 30px auto;
+        display: flex;
+        flex-direction: row;
+        align-items: left;
+    }
+
+    .image-block2 img {
+        width: 18%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .image-block2 p {
+        width: 100%;
+        text-align: left;
+        padding-left: 5px;
+    }
+    body {
+        font-family: 'Josefin Sans', sans-serif;
+        box-sizing: border-box;
+    }
+    .container-fluid{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: #FFF;
+    }
+    /* ============= Animation background ========= */
+    .background {
+        background: linear-gradient(132deg, #003594, #FFC72C);
+        background-size: 400% 400%;
+        animation: Gradient 15s ease infinite;
+        position: relative;
+        height: 250vh; /*this adjusts the height of the page*/
+        width: 100%;
+        overflow: hidden;
+        padding:0;
+        margin:0px;
+    }
+    .cube {
+        position: absolute;
+        top: 80vh;
+        left: 45vw;
+        width: 10px;
+        height: 10px;
+        border: solid 1px #D7D4E4;
+        transform-origin: top left;
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        animation: cube 12s ease-in forwards infinite;
+    }
+    .cube:nth-child(2n) {
+        border-color: #FFF ;
+    }
+    .cube:nth-child(2) {
+        animation-delay: 2s;
+        left: 25vw;
+        top: 40vh;
+    }
+    .cube:nth-child(3) {
+        animation-delay: 4s;
+        left: 75vw;
+        top: 50vh;
+    }
+    .cube:nth-child(4) {
+        animation-delay: 6s;
+        left: 90vw;
+        top: 10vh;
+    }
+    .cube:nth-child(5) {
+        animation-delay: 8s;
+        left: 10vw;
+        top: 85vh;
+    }
+    .cube:nth-child(6) {
+        animation-delay: 10s;
+        left: 50vw;
+        top: 10vh;
+    }
+    /* ================= Header ============ */
+    header{
+        position: absolute;
+        top:0%;
+        left: 0%;
+        width:100%;
+        margin: 0;
+        padding: 0;
+    }
+    /* navbar */
+    nav{
+        color: #FFF;
+        float: right;
+        margin:30px 90px;
+    }
+    nav ul{
+        list-style: none;
+    }
+    nav ul li {
+        float: left;
+        transition: .3s;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: #EFEEF5;
+        transition: .5;
+        font-size: 15px;
+        margin-left:16px;
+    }
+    nav ul li:hover a{
+        text-decoration: none;
+        color: #591BC5;;
+    }
+    nav ul li:hover{
+        height: 45px;
+        padding-top: 30px;
+        margin-top: -30px;
+        background: #EFEEF5;
+        text-decoration: none;
+        transform: skew(15deg);
+    }
+    /* Logo */
+    .logo{
+        width: 80px;
+        height: 40px;
+        background: #EFEEF5;
+        margin: 40px 63px;
+        float: left;
+        transform: rotate(-30deg);
+    }
+    .logo span{
+        color: #003594;
+        font-size: 2em;
+        line-height: 1.4;
+        padding-left: 5px;
+        font-weight: bold;
+    }
+    /* Header content & title & button*/
+    .header-content{
+        margin-top:0%;
+        text-align: center;
+        color:  #EFEEF5;
+    }
+    .header-content h1{
+        text-transform: uppercase;
+        font-size: 2em;
+        letter-spacing: 1px;
+    }
+    .header-content p {
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 20px auto;
+    }
+    .header-content button{
+        width: 140px;
+        margin:20px 10px;
+        color: #591BC5;
+        font-size: 17px;
+        border:1px solid #EFEEF5;
+        font-weight: 500;
+        background: #EFEEF5;
+        border-radius: 20px;
+        padding: 10px;
+        cursor:pointer;
+        transition: .3s;
+    }
+    .header-content button:hover{
+        border-radius: 0;
+    }
+    .text-content{
+        margin-top:5%;
+        text-align: left;
+        padding-left: 75px;
+        color:  #EFEEF5;
+    }
+    .text-content2{
+        margin-top:5%;
+        text-align: left;
+        max-width: 1500px;
+        padding-left: 75px;
+        padding-right: 80px;
+        color:  #EFEEF5;
+    }
+    /* Animate Background*/
+    @keyframes Gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    @keyframes cube {
+        from {
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            opacity: 1;
+        }
+        to {
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+
+
+    body {transition: opacity ease-in 0.2s; }
+    body[unresolved] {opacity: 0; display: block; overflow: hidden;
+        position: relative; }
+    </style>
+    <title> Software Engineering App </title>
+    <!--<link rel="stylesheet" href="./cssReset.css">-->
+    <div class="container-fluid">
+        <!-- Background animtion-->
+        <div class="background">
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+        </div>
+        <!-- header -->
+        <header>
+            <!-- navbar -->
+            <nav>
+                <ul>
+                    <li><a href="demo.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="version.html">Versions</a></li>
+                    <li><a href="contributors.html">Contributors</a></li>
+                </ul>
+            </nav>
+            <!-- logo -->
+            <div class="logo"><span>4350</span></div>
+            </style>
 </head>
 <body>
     <section>
-	<p>
-    <section class="header-content">
-    <h1>
-		<b> PROGRESS OF OUR APP </b>
-    </h1>
-	</p>
-     </section>
+        <p>
+        <section class="header-content">
+            <h1>
+                <b> PROGRESS OF OUR APP </b>
+            </h1>
+        </p>
+        <br>
+        <div class="image-block">
+            <img src="https://www.cs.csub.edu/~mcarrillo/4350/mockup.png" alt="mockup">
+            <h2><p>This is our mock up of the idea for our app. Here we drew out the initial layout and the functionality of the randomizer. This is a rough sketch of an idea of our app. The end product will be better looking.</p></h2>
+        </div>
+        <div class="image-block2">
+            <img src="https://www.cs.csub.edu/~mcarrillo/4350/version1.png" alt="version1">
+            <h2><p>This is our first step into making the app. We had created the buttons into making our app have some functionality. At this stage the buttons do not have any function to them. This is where we started. At this point there is no functionality with the buttons.</p></h2>
+        </div>
+        <div class="image-block2">
+            <img src="https://www.cs.csub.edu/~mcarrillo/4350/version2.png" alt="version2-add" usemap="#appmap">
+            <img src="https://www.cs.csub.edu/~mcarrillo/4350/version2-delete.png" alt="version2-delete" usemap="#appmap">
+            <h2><p>This is the next part of our app. We had created the functionality for the add and delete buttons. At this point the add button allows us to add any subject we want to the list.The delete button currently allows the user to delete the subject from the list when they type the subject into the entry list.</p></h2>
+            <a href="./Version1.apk"> </a>
+            <map name="appmap">
+                <area shape="rect" coords="26,26,956,956" href="./Version1.apk"                                                         title="Install version 1" alt="app image goes here">
+            </map>
+        </div>
+        <div class="image-block2">
+            <img src="https://www.cs.csub.edu/~mcarrillo/4350/editbefore.png" alt="edit-before" usemap="#appmap2">
+            <img src="https://www.cs.csub.edu/~mcarrillo/4350/editafter.png" alt="edit-after" usemap="#appmap2">
+            <h2><p>This is where we had added in an edit button to our app. The edit button allows the user to select the subject of their choice and edit that subject. This will allow the user to be able to change the subject or be specific to what the user wants. There was also an icon added to the application in this version. In this version, the subjects are stored and saved for when you go in and out of the app.</p></h2>
+            <a href="./Version2.apk"> </a>
+            <map name="appmap2">
+                <area shape="rect" coords="26,26,956,956" href="./Version2.apk"                                                         title="Install version 2" alt="app image goes here">
+            </map>
+        </div>
+        </section>
 </body>
 </html>
-
