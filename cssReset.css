@@ -15,7 +15,7 @@ body {
   background-size: 400% 400%;
   animation: Gradient 15s ease infinite;
   position: relative;
-  height: 100vh;
+  height: 98vh; /*this adjusts the height of the page*/
   width: 100%;
   overflow: hidden;
   padding:0;
@@ -153,6 +153,14 @@ nav ul li:hover{
   margin-top:5%;
   text-align: left;
   padding-left: 75px;
+  padding-right: 80px;
+  color:  #EFEEF5;
+}
+.text-content2{
+  margin-top:5%;
+  text-align: center;
+  padding-left: 80px;
+  padding-right: 80px;
   color:  #EFEEF5;
 }
 /* Animate Background*/
