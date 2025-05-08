@@ -1,64 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="author" content="Monique Carrillo">
-        <meta name="description" content="This page shows all who contributed">
-        <title>Contributors</title>
-        <link rel="stylesheet" href="./cssReset.css">
-    </head>
-    	<style>
-		body {transition: opacity ease-in 0.2s; }
-		body[unresolved] {opacity: 0; display: block; overflow: hidden;
-			position: relative; }
-	</style>
-	<title> Software Engineering App </title>
-    <link rel="stylesheet" href="./cssReset.css">
-     <div class="container-fluid">
-<!-- Background animtion-->
-    <div class="background">
-       <div class="cube"></div>
-       <div class="cube"></div>
-       <div class="cube"></div>
-       <div class="cube"></div>
-      <div class="cube"></div>
-    </div>
-<!-- header -->
-   <header>
-<!-- navbar -->
-     <nav>
-        <ul>
-           <li><a href="demo.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="version.html">Versions</a></li>
-            <li><a href="contributors.html">Contributors</a></li>
-         </ul>
-       </nav>
-<!-- logo -->
-      <div class="logo"><span>4350</span></div>
-	</style>
-</head>
-<body>
-    <section>
-	<p>
-    <section class="header-content">
-    <h1>
-		<b> Contributors </b>
-    </h1>
-	</p>
-     </section>
-    <section class="text-content">
-	<p><h2>Gordon Griesel</h2></p>
-    <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Our professor for our Advanced Software Engineering. </p>
-    <p><h2>Monique Carrillo</h2></p>
-	<p><h2>Skyblue Gonzales</h2></p>
-	<p><h2>Darren Benavides</h2></p>
-	<p><h2>Skye Beebe</h2></p>
-	<p><h2>Andy Ceballos</h2></p>
-	<p><h2>Delaney Welch</h2></p>
-	<p><h2>Ana Rivera</h2></p>
-	<p><h2>Ramon Moreno</h2></p>
-    </section>
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+.container-fluid{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #FFF;
+}
+/* ============= Animation background ========= */
+.background {
+    background: linear-gradient(132deg, #003594, #FFC72C);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    position: relative;
+    height: 170vh; /*this adjusts the height of the page*/
+    width: 100%;
+    overflow: hidden;
+    padding:0;
+    margin:0px;
+}
+.cube {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #D7D4E4;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+    border-color: #FFF ;
+}
+.cube:nth-child(2) {
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+}
+.cube:nth-child(3) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+}
+.cube:nth-child(4) {
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+}
+.cube:nth-child(5) {
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+}
+.cube:nth-child(6) {
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+}
+/* ================= Header ============ */
+header{
+    position: absolute;
+    top:0%;
+    left: 0%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+/* navbar */
+nav{
+    color: #FFF;
+    float: right;
+    margin:30px 90px;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li {
+    float: left;
+    transition: .3s;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #EFEEF5;
+    transition: .5;
+    font-size: 15px;
+    margin-left:16px;
+}
+nav ul li:hover a{
+    text-decoration: none;
+    color: #591BC5;;
+}
+nav ul li:hover{
+    height: 45px;
+    padding-top: 30px;
+    margin-top: -30px;
+    background: #EFEEF5;
+    text-decoration: none;
+    transform: skew(15deg);
+}
+/* Logo */
+.logo{
+    width: 80px;
+    height: 40px;
+    background: #EFEEF5;
+    margin: 40px 63px;
+    float: left;
+    transform: rotate(-30deg);
+}
+.logo span{
+    color: #003594;
+    font-size: 2em;
+    line-height: 1.4;
+    padding-left: 5px;
+    font-weight: bold;
+}
+/* Header content & title & button*/
+.header-content{
+    margin-top:0%;
+    text-align: center;
+    color:  #EFEEF5;
+}
+.header-content h1{
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+.header-content p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 20px auto;
+}
+.header-content button{
+    width: 140px;
+    margin:20px 10px;
+    color: #591BC5;
+    font-size: 17px;
+    border:1px solid #EFEEF5;
+    font-weight: 500;
+    background: #EFEEF5;
+    border-radius: 20px;
+    padding: 10px;
+    cursor:pointer;
+    transition: .3s;
+}
+.header-content button:hover{
+    border-radius: 0;
+}
+.text-content{
+    margin-top:5%;
+    text-align: left;
+    padding-left: 75px;
+    padding-right: 80px;
+    color:  #EFEEF5;
+}
+.text-content2{
+    margin-top:5%;
+    text-align: left;
+    max-width: 1500px;
+    padding-left: 75px;
+    padding-right: 80px;
+    color:  #EFEEF5;
+}
+  /* Animate Background*/
+  @keyframes Gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  @keyframes cube {
+      from {
+          transform: scale(0) rotate(0deg) translate(-50%, -50%);
+          opacity: 1;
+      }
+      to {
+          transform: scale(20) rotate(960deg) translate(-50%, -50%);
+          opacity: 0;
+      }
+  }
+  body {transition: opacity ease-in 0.2s; }
+  body[unresolved] {opacity: 0; display: block; overflow: hidden;
+      position: relative; }
+    </style>
+    <title> Software Engineering App </title>
+    <div class="container-fluid">
+        <!-- Background animtion-->
+        <div class="background">
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+        </div>
+        <!-- header -->
+        <header>
+            <!-- navbar -->
+            <nav>
+                <ul>
+                    <li><a href="demo.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="version.html">Versions</a></li>
+                    <li><a href="contributors.html">Contributors</a></li>
+                </ul>
+            </nav>
+            <!-- logo -->
+            <div class="logo"><span>4350</span></div>
+            </style>
+            </head>
+            <body>
+                <section>
+                    <p>
+                    <section class="header-content">
+                        <h1>
+                            <b> Contributors </b>
+                        </h1>
+                    </p>
+                    </section>
+                    <section class="text-content">
+                        <p><h2>Gordon Griesel</h2></p>
+                        <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Our professor for our Advanced Software Engineering. He loves hearing us have our fun bs in the class and he knows when to get us back on track. Professor Gordon helped guide us through the semester and our time in CSUB. </p>
+                        <p><h2>Monique Carrillo</h2></p>
+                        <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;I am the student who created this entire website to help showcase our group project from all the different versions that can be downloaded and the information on them to the information you see here on our website. I hope you like it! I do love to crochet like Skye and Delaney! </p>
+                        <p><h2>Skyblue Gonzales</h2></p>
+                        <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A student who created the functionality of the add button as well as created the list views of the app. He also hopes to build a great dating app in which he is the only male on there and can meet all the cute single ladies (minus the nursing students, sorry ladies). He can't wait to meet you ladies on there one day!</p>
+                        <p><h2>Darren Benavides</h2></p>
+                        <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A student who started our app off by creating the buttons on the app. He chose the designs and implemented them in our app. If you check out the the version page you can see an image of his buttons under the mock drawing of our app. He also created the functionality of the delete button in our app. He's very smart and resourceful and loves anime.</p>
+                        <p><h2>Skye Beebe</h2></p>
+                        <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A student who created the the functionality of the randomize button. She is a great classmate with her name spelled correctly as opposed to another of our classmate (*cough*Skyblue*cough*). She loves to crochet like myself and Delaney! </p>
+                        <p><h2>Andy Ceballos</h2></p>
+                        <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A very quiet student in our class who created the functionality of the edit button. He is probably tired of our fun bs in the class but I think he secretly likes it. He's just too shy to say so. </p>
+                        <p><h2>Delaney Welch</h2></p>
+                        <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A student who created the page in our app where the randomizer will turn into a slot machine and pick randomly the item from the list. She is a lovely lady who loves to crochet just like myself and Skye. </p>
+                        <p><h2>Ana Rivera</h2></p>
+                        <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A student who created the progress bar part of our app. This progress bar will allow the user to keep track of the progress of the task that is being done. She is a pretty quiet girl and has to sit through our fun bs but like Andy I do believe she loves it. </p>
+                        <p><h2>Ramon Moreno</h2></p>
+                        <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A student who created the special animated intro in our app. He is a funny guy who brings out the memes in our labs and in his work. Thinking about it now while this app is being worked on I do wonder if it was a good idea giving him the animated intro as a task....well its better than the website...maybe... </p>
+                    </section>
+            </body>
 </html>
+
 
